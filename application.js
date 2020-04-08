@@ -6,10 +6,10 @@ const startDate = new Date(year, month - 1, 1)
 const endDate = new Date(year, month,  0) 
 const endDayCount = endDate.getDate() 
 const startDay = startDate.getDay()
-let dayCount = 1 
+let dayCount = 1
 let calendarHtml = '' 
 
-calendarHtml += '<h1>' + year  + '/' + month + '</h1>'
+calendarHtml += '<h1 id="title">' + year  + '年' + month + '月' + '</h1>'
 calendarHtml += '<table>'
 
 for (let i = 0; i < weeks.length; i++) {
