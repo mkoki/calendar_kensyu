@@ -9,15 +9,19 @@ h1 {
 }
 
 table {
-  border-spacing: 0;
+  border-spacing: 10;
   border-collapse: collapse;
+}
+
+tr {
+  
 }
 
 td {
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
-
+  width: 200px;
 }
 
 td:first-child {
@@ -34,4 +38,12 @@ td:last-child {
 
 #title {
   float: center;
+}
+
+#prev {
+  float: left;
+}
+
+#next {
+  float: right;
 }
