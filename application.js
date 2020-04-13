@@ -33,7 +33,7 @@ function create() {
           } else if (day_count > end_day_count) {
               calendar_html += '<td></td>'
           } else {
-              calendar_html += '<td id="day_count">' + day_count + '</td>'
+              calendar_html += '<td class="modal-btn">' + day_count + '</td><div class="modal"><select name="a-block"><option value="">選択してください</option><option value="a1">“100年に一人の逸材” 棚橋弘至</option></select></div>'
               day_count += 1
           }
       }
@@ -41,13 +41,15 @@ function create() {
   }
   calendar_html += '</table>'
 
-  
-
   document.querySelector('#calendar').insertAdjacentHTML('afterbegin', calendar_html)
   document.querySelector('#prev').addEventListener('click', move_calendar)
   document.querySelector('#next').addEventListener('click', move_calendar)
+  document.addEventListener("click", function(e) {
+    if(e.target.classList.contains("modal-btn")) {
+      document.getElementById('modal').style.display = 'block';
+    }
+  })
 }
-
 
 function move_calendar(ele) {
   document.querySelector('#calendar').innerHTML = ''
