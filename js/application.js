@@ -14,8 +14,6 @@ function create() {
   const last_month_end_day_count = last_month_end_date.getDate()
 
   calendar_html += '<h1 id="title">' + year  + '年' + month + '月' + '</h1>'
-  calendar_html += '<button id="prev" type="button">' + '前の月' + '</button>'
-  calendar_html += '<button id="next" type="button">' + '次の月' + '</button>'
   calendar_html += '<p>'
   calendar_html += '<table>'
 
@@ -33,7 +31,7 @@ function create() {
           } else if (day_count > end_day_count) {
               calendar_html += '<td></td>'
           } else {
-              calendar_html += '<td class="modal-btn">' + day_count + '</td><div class="modal"><select name="a-block"><option value="">選択してください</option><option value="a1">test</option></select></div>'
+              calendar_html += '<td class="modal-btn">' + day_count + '</td><div class="modal"></div>'
               day_count += 1
           }
       }
