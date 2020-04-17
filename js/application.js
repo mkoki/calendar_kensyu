@@ -3,7 +3,7 @@ const date = new Date()
 let year = date.getFullYear()
 let month = date.getMonth() + 1
 
-function create() {
+function create(year, month) {
   let start_date = new Date(year, month - 1, 1) 
   let end_date = new Date(year, month,  0) 
   let end_day_count = end_date.getDate() 
@@ -60,15 +60,15 @@ function move_calendar(ele) {
     }
   }
 
-  if (ele.target.id === 'next') {
+  else if (ele.target.id === 'next') {
     month += 1
     if (month > 12) {
       year += 1
       month = 1
     }
   }
-  create()
+  create(year, month)
 
 };
 
-create();
+create(year, month);
