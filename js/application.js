@@ -11,7 +11,6 @@ function create(year, month) {
   let day_count = 1
   let calendar_html = ''
   const last_month_end_date = new Date(year, month - 1, 0)
-  const last_month_end_day_count = last_month_end_date.getDate()
 
   calendar_html += '<h1 id="title">' + year  + '年' + month + '月' + '</h1>'
   calendar_html += '<p>'
@@ -26,7 +25,7 @@ function create(year, month) {
 
       for (let d = 0; d < 7; d++) {
           if (w == 0 && d < start_day) {
-              let num = last_month_end_day_count - start_day + d + 1
+              let num = last_month_end_date.getDate() - start_day + d + 1
               calendar_html += '<td id="disabled">' + num + '</td>'
           } else if (day_count > end_day_count) {
               calendar_html += '<td></td>'
