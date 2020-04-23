@@ -7,12 +7,28 @@
   <title>カレンダー研修</title>
 </head>
 <body>
-  <button id="prev" type="button" class="btn-square">前の月</button>
-  <button id="next" type="button" class="btn-square">次の月</button>
+  <div class="top">
+    <button id="prev" type="button" class="btn-square">前の月</button>
+    <h1 id="title">4月</h1>
+    <button id="next" type="button" class="btn-square">次の月</button>
+  </div>
 
-  <div id="calendar"></div>
+  <table>
+    <thead>
+      <tr>
+        <td>日</td>
+        <td>月</td>
+        <td>火</td>
+        <td>水</td>
+        <td>木</td>
+        <td>金</td>
+        <td>土</td>
+      </tr>
+    </thead>
+    <tbody class="calendar"></tbody>
+  </table>
 
-  <script src="js/application.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
