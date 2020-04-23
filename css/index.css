@@ -84,3 +84,20 @@ td:last-child {
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
 }
+
+#modal {
+  background: #fff;
+  width: 500px;
+  padding: 50px;
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.4s;
+}
+
+.hidden {
+  display: none;
+}

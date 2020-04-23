@@ -32,11 +32,12 @@ function create(year, month) {
   document.querySelector('#calendar').insertAdjacentHTML('afterbegin', calendar_html)
   document.querySelector('#prev').addEventListener('click', move_calendar)
   document.querySelector('#next').addEventListener('click', move_calendar)
-  document.addEventListener("click", function(e) {
-    if(e.target.classList.contains("modal-btn")) {
-      document.getElementById('modal').style.display = 'block';
-    }
-  })
+  mbtns = document.getElementsByClassName('modal-btn');
+  for(i = 0; i < mbtns.length; i++) {
+    mbtns[i].addEventListener("click", (e) => {
+      document.getElementById('modal').classList.remove('hidden');
+  });
+  }
 }
 
 function move_calendar(ele) {
