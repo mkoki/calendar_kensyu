@@ -17,6 +17,7 @@ h1 {
 table {
   border-spacing: 10;
   border-collapse: collapse;
+  z-index: 3;
 }
 
 tr {
@@ -25,7 +26,7 @@ tr {
 td {
   border: 1px solid #ddd;
   padding: 20px;
-  text-align: center;
+  text-align: left;
   width: 200px;
 }
 
@@ -57,19 +58,6 @@ td:last-child {
   color: #ccccdd;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-  border-color: black;
-  }
-
 .btn-square {
   display: inline-block;
   padding: 0.5em 1em;
@@ -87,57 +75,31 @@ td:last-child {
 }
 
 #modal {
-  background: #fff;
-  width: 300px;
+  background-color: lightcyan;
+  width: 250px;
   padding: 50px;
   border-radius: 4px;
-  position: absolute;
   top: 40px;
   left: 0;
   right: 0;
-  bottom: 500px;
   margin: 0 auto;
   transition: transform 0.4s;
   border-color: black;
+  z-index: 1;
+  position: absolute;
+}
+
+.mask {
+  background-color: lightslategray;
 }
 
 .hidden {
   display: none;
 }
 
-.nico-modal-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  border-color: black;
-}
-
-.fa-times {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  color: #272822;
-  cursor: pointer;
-}
-
-#signup-form {
-  width: 100%;   
-}
-
-#signup-form h2 {
-  color: #272822;
-  letter-spacing: 1px;
-  margin-bottom: 40px;
-}
-
-
 .submit-btn {
   display: inline-block;
-  padding: 20px 30px;
+  padding: 20px;
   border: none;
   border-radius: 3px;
   margin: auto auto;
@@ -147,10 +109,11 @@ td:last-child {
 
 #close {
   cursor: pointer;
-  width: 200px;
+  width: 100px;
   border: 1px solid #ccc;
   border-radius: 4px;
   text-align: center;
-  padding: 12px 0;
+  padding: 8px 0;
   margin: 16px auto 0;
+  z-index: 0;
 }

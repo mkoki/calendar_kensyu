@@ -34,18 +34,22 @@ function create(year, month) {
   document.querySelector('#calendar').insertAdjacentHTML('afterbegin', calendarHtml)
   document.querySelector('#prev').addEventListener('click', move_calendar)
   document.querySelector('#next').addEventListener('click', move_calendar)
-  document.getElementById('close').addEventListener('click', () => {
+  document.getElementById('close').addEventListener('click', (e) => {
     modal.classList.add('hidden');
-  })
-  $("td").click(function () {
-    modal.classList.remove('hidden');
+    $('td').removeClass('mask');
+    e.stopPropagation();
   });
-  // mbtns = document.getElementsByClassName('modal-btn');
-  // for(i = 0; i < mbtns.length; i++) {
-  //   mbtns[i].addEventListener("click", (e) => {
-  //     document.getElementById('modal').classList.remove('hidden');
-  // });
-  // }
+  
+  $("td").click(function () {
+    const setLeft = $(this).position().left - 700; // left座標を取得
+    const setTop = $(this).position().top + 70; // top座標
+    $('#modal').css("left", setLeft);
+    $('#modal').css("top", setTop);
+    $('#modal').appendTo($(this));
+    $('td').removeClass('mask');
+    modal.classList.remove('hidden');
+    $(this).addClass('mask');
+  });
 }
 
 function move_calendar(ele) {
