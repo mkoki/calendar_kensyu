@@ -36,10 +36,12 @@ td {
 
 td:first-child {
   color: red;
+  background-color: lightpink;
 }
 
 td:last-child {
   color: royalblue;
+  background-color: lightskyblue;
 }
 
 #daycount {
