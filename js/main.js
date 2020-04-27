@@ -30,36 +30,41 @@ function create(year, month) {
       calendarHtml += '</tr>'
   }
 
-  document.getElementById("title").innerText = month + '月';
-  document.querySelector('#calendar').insertAdjacentHTML('afterbegin', calendarHtml)
-  document.querySelector('#prev').addEventListener('click', move_calendar)
-  document.querySelector('#next').addEventListener('click', move_calendar);
+  $("title").innerText = month + '月';
+  $('#calendar').prepend(calendarHtml)
+  $('#prev').on('click', move_calendar)
+  $('#next').on('click', move_calendar);
 
-  $("td").click(function () {
-    const setLeft = $(this).position().left - 700; // left座標を取得
-    const setTop = $(this).position().top + 70; // top座標
-    $('#modal').css("left", setLeft);
-    $('#modal').css("top", setTop);
-    $('#modal').appendTo($(this));
-    $('td').removeClass('mask');
-    modal.classList.remove('hidden');
-    $(this).addClass('mask');
-    document.getElementById('close').addEventListener('click', (e) => {
-      modal.classList.add('hidden');
-      $('td').removeClass('mask');
-      e.stopPropagation();
-    });
-  });
+  $("td").on('click', openModal);
 
   $('.submit-btn').on('click', function(e) {
-    var click =  $(this).text();
+    const click =  $(this).text();
     $('.mask').children('li').html(click);
-    modal.classList.add('hidden');
-    $('td').removeClass('mask');
-    e.stopPropagation();
+    hideModal(e);
   });
 }
 
+// モーダルを表示
+function openModal() {
+  const setLeft = $(this).position().left - 700; // モーダルのleft座標を設置
+  const setTop = $(this).position().top + 70; // モーダルのtop座標を設置
+  $('#modal').css("left", setLeft);
+  $('#modal').css("top", setTop);
+  $('#modal').appendTo($(this));
+  $('td').removeClass('mask');
+  $('#modal').removeClass('hidden');
+  $(this).addClass('mask');
+  $('close').on('click', hideModal);
+}
+
+// モーダルを非表示
+function hideModal(ele) {
+  $('#modal').addClass('hidden');
+  $('td').removeClass('mask');
+  ele.stopPropagation();
+}
+
+// 月の移動
 function move_calendar(ele) {
   document.querySelector('#calendar').innerHTML = ''
 
