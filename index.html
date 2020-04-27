@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <title>カレンダー研修</title>
 </head>
 <body>
@@ -27,13 +28,18 @@
     </thead>
     <tbody id="calendar"></tbody>
   </table>
-  <section id="modal" class="hidden">
-    <p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
+  <section id="modal" class="nico-modal-wrapper ">
+    <div id="signup-form">
+        <form action="#">
+          <div class="submit-btn" id="face-1">🥰</div>
+          <div class="submit-btn" id="face-2">🤬</div>
+          <div class="submit-btn" id="face-3">👻</div>
+        </form>
+    </div>
     <div id="close">閉じる</div>
   </section>
 
   <script src="js/main.js"></script>
-  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 </body>
 </html>

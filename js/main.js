@@ -23,7 +23,7 @@ function create(year, month) {
           } else if (dayCount > endDay) {
               calendarHtml += '<td></td>';
           } else {
-              calendarHtml += '<td class="modal-btn">' + dayCount + '</td><div class="modal"></div>';
+              calendarHtml += '<td>' + dayCount + '</td>';
               dayCount += 1;
           }
       }
@@ -34,12 +34,18 @@ function create(year, month) {
   document.querySelector('#calendar').insertAdjacentHTML('afterbegin', calendarHtml)
   document.querySelector('#prev').addEventListener('click', move_calendar)
   document.querySelector('#next').addEventListener('click', move_calendar)
-  mbtns = document.getElementsByClassName('modal-btn');
-  for(i = 0; i < mbtns.length; i++) {
-    mbtns[i].addEventListener("click", (e) => {
-      document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('close').addEventListener('click', () => {
+    modal.classList.add('hidden');
+  })
+  $("td").click(function () {
+    modal.classList.remove('hidden');
   });
-  }
+  // mbtns = document.getElementsByClassName('modal-btn');
+  // for(i = 0; i < mbtns.length; i++) {
+  //   mbtns[i].addEventListener("click", (e) => {
+  //     document.getElementById('modal').classList.remove('hidden');
+  // });
+  // }
 }
 
 function move_calendar(ele) {

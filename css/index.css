@@ -67,6 +67,7 @@ td:last-child {
   width: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
+  border-color: black;
   }
 
 .btn-square {
@@ -87,17 +88,69 @@ td:last-child {
 
 #modal {
   background: #fff;
-  width: 500px;
+  width: 300px;
   padding: 50px;
   border-radius: 4px;
   position: absolute;
   top: 40px;
   left: 0;
   right: 0;
+  bottom: 500px;
   margin: 0 auto;
   transition: transform 0.4s;
+  border-color: black;
 }
 
 .hidden {
   display: none;
+}
+
+.nico-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  border-color: black;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #272822;
+  cursor: pointer;
+}
+
+#signup-form {
+  width: 100%;   
+}
+
+#signup-form h2 {
+  color: #272822;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+
+.submit-btn {
+  display: inline-block;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 3px;
+  margin: auto auto;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#close {
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
 }
