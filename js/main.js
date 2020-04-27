@@ -23,7 +23,7 @@ function create(year, month) {
           } else if (dayCount > endDay) {
               calendarHtml += '<td></td>';
           } else {
-              calendarHtml += '<td>' + dayCount + '<p></p></td>';
+              calendarHtml += '<td>' + dayCount + '<li></li></td>';
               dayCount += 1;
           }
       }
@@ -33,12 +33,7 @@ function create(year, month) {
   document.getElementById("title").innerText = month + '月';
   document.querySelector('#calendar').insertAdjacentHTML('afterbegin', calendarHtml)
   document.querySelector('#prev').addEventListener('click', move_calendar)
-  document.querySelector('#next').addEventListener('click', move_calendar)
-  document.getElementById('close').addEventListener('click', (e) => {
-    modal.classList.add('hidden');
-    $('td').removeClass('mask');
-    e.stopPropagation();
-  });
+  document.querySelector('#next').addEventListener('click', move_calendar);
 
   $("td").click(function () {
     const setLeft = $(this).position().left - 700; // left座標を取得
@@ -49,11 +44,16 @@ function create(year, month) {
     $('td').removeClass('mask');
     modal.classList.remove('hidden');
     $(this).addClass('mask');
+    document.getElementById('close').addEventListener('click', (e) => {
+      modal.classList.add('hidden');
+      $('td').removeClass('mask');
+      e.stopPropagation();
+    });
   });
 
   $('.submit-btn').on('click', function(e) {
     var click =  $(this).text();
-    $('.mask').children('p').html(click);
+    $('.mask').children('li').html(click);
     modal.classList.add('hidden');
     $('td').removeClass('mask');
     e.stopPropagation();
