@@ -23,7 +23,7 @@ function create(year, month) {
           } else if (dayCount > endDay) {
               calendarHtml += '<td></td>';
           } else {
-              calendarHtml += '<td>' + dayCount + '</td>';
+              calendarHtml += '<td>' + dayCount + '<p></p></td>';
               dayCount += 1;
           }
       }
@@ -39,7 +39,7 @@ function create(year, month) {
     $('td').removeClass('mask');
     e.stopPropagation();
   });
-  
+
   $("td").click(function () {
     const setLeft = $(this).position().left - 700; // left座標を取得
     const setTop = $(this).position().top + 70; // top座標
@@ -49,6 +49,14 @@ function create(year, month) {
     $('td').removeClass('mask');
     modal.classList.remove('hidden');
     $(this).addClass('mask');
+  });
+
+  $('.submit-btn').on('click', function(e) {
+    var click =  $(this).text();
+    $('.mask').children('p').html(click);
+    modal.classList.add('hidden');
+    $('td').removeClass('mask');
+    e.stopPropagation();
   });
 }
 
