@@ -54,7 +54,7 @@ function openModal() {
   $('td').removeClass('mask');
   $('#modal').removeClass('hidden');
   $(this).addClass('mask');
-  $('close').on('click', hideModal);
+  $('#close').on('click', hideModal);
 }
 
 // モーダルを非表示
