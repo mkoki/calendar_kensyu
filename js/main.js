@@ -58,11 +58,11 @@ function hideModal(ele) {
 }
 
 // 月の移動
-function moveCalendar(x) {
+function moveCalendar(moveNum) {
   $('#modal').appendTo('body');
   $('#calendar').text('');
 
-  month += x
+  month += moveNum
 
   if (month < 1) {
     year -= 1
