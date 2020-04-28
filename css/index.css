@@ -96,7 +96,7 @@ td:last-child {
 }
 
 .mask {
-  background-color: lightslategray;
+  background-color: lightslategray !important;;
 }
 
 .hidden {

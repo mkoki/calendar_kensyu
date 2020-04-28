@@ -62,7 +62,7 @@ function hideModal(ele) {
 }
 
 // 月の移動
-function move_calendar(x) {
+function moveCalendar(x) {
   $('#calendar').html('');
 
   month += x
@@ -80,5 +80,5 @@ function move_calendar(x) {
 };
 
 create(year, month);
-$('#prev').on('click', () => move_calendar(-1));
-$('#next').on('click', () => move_calendar(1));
+$('#prev').on('click', () => moveCalendar(-1));
+$('#next').on('click', () => moveCalendar(1));
