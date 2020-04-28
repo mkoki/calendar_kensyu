@@ -63,7 +63,7 @@ function hideModal(ele) {
 
 // 月の移動
 function move_calendar(ele) {
-  document.querySelector('#calendar').innerHTML = ''
+  $('#calendar').html('');
 
   if (ele.target.id === 'prev') {
     month -= 1
