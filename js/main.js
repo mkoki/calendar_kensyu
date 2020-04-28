@@ -61,12 +61,11 @@ function hideModal(ele) {
   ele.stopPropagation();
 }
 
-// 月の移動
-function moveCalendar(moveNum) {
+function moveMonth(number) {
   $('#modal').appendTo('body');
   $('#calendar').text('');
 
-  month += moveNum
+  month += number
 
   if (month < 1) {
     year -= 1
@@ -81,5 +80,5 @@ function moveCalendar(moveNum) {
 };
 
 create(year, month);
-$('#prev').on('click', () => moveCalendar(-1));
-$('#next').on('click', () => moveCalendar(1));
+$('#prev').on('click', () => moveMonth(-1));
+$('#next').on('click', () => moveMonth(1));
