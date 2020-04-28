@@ -17,24 +17,31 @@ h1 {
 table {
   border-spacing: 10;
   border-collapse: collapse;
+  z-index: 3;
+  table-layout: fixed;
 }
 
-tr {
+li {
+  list-style: none;
 }
 
 td {
   border: 1px solid #ddd;
   padding: 20px;
-  text-align: center;
+  text-align: left;
+  vertical-align: top;
   width: 200px;
+  height: 50px;
 }
 
 td:first-child {
   color: red;
+  background-color: lightpink;
 }
 
 td:last-child {
   color: royalblue;
+  background-color: lightskyblue;
 }
 
 #daycount {
@@ -53,21 +60,9 @@ td:last-child {
   float: right;
 }
 
-#disabled {
-  color: #ccccdd;
+.disabled {
+  color: #ccccdd !important;
 }
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-  }
 
 .btn-square {
   display: inline-block;
@@ -83,4 +78,48 @@ td:last-child {
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
+}
+
+#modal {
+  background-color: lightcyan;
+  width: 250px;
+  padding: 50px;
+  border-radius: 4px;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.4s;
+  border-color: black;
+  z-index: 1;
+  position: absolute;
+}
+
+.mask {
+  background-color: lightslategray !important;;
+}
+
+.hidden {
+  display: none;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 20px;
+  border: none;
+  border-radius: 3px;
+  margin: auto auto;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#close {
+  cursor: pointer;
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 8px 0;
+  margin: 16px auto 0;
+  z-index: 0;
 }
