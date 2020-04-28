@@ -63,7 +63,8 @@ function hideModal(ele) {
 
 // 月の移動
 function moveCalendar(x) {
-  $('#calendar').html('');
+  $('#modal').appendTo('body');
+  $('#calendar').text('');
 
   month += x
 
