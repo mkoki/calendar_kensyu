@@ -19,7 +19,7 @@ function create(year, month) {
           } else if (dayCount > endDay) {
               calendarHtml += '<td></td>';
           } else {
-              calendarHtml += '<td>' + dayCount + '<li></li></td>';
+              calendarHtml += '<td class="modalCell">' + dayCount + '<li></li></td>';
               dayCount += 1;
           }
       }
@@ -28,7 +28,7 @@ function create(year, month) {
 
   $("#title").text(year + '-' + month + '月');
   $('#calendar').prepend(calendarHtml);
-  $("td").on('click', openModal);
+  $(".modalCell").on('click', openModal);
 
   $('.submit-btn').on('click', function(e) {
     const click =  $(this).text();
