@@ -60,8 +60,8 @@ td:last-child {
   float: right;
 }
 
-#disabled {
-  color: #ccccdd;
+.disabled {
+  color: #ccccdd !important;
 }
 
 .btn-square {

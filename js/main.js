@@ -19,7 +19,7 @@ function create(year, month) {
       for (let d = 0; d < 7; d++) {
           if (w == 0 && d < startYoubi) {
               let num = lastMonthEndDate.getDate() - startYoubi + d + 1;
-              calendarHtml += '<td id="disabled">' + num + '</td>';
+              calendarHtml += '<td class="disabled">' + num + '</td>';
           } else if (dayCount > endDay) {
               calendarHtml += '<td></td>';
           } else {
