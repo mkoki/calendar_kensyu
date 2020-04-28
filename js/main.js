@@ -62,28 +62,23 @@ function hideModal(ele) {
 }
 
 // 月の移動
-function move_calendar(ele) {
+function move_calendar(x) {
   $('#calendar').html('');
 
-  if (ele.target.id === 'prev') {
-    month -= 1
-    if (month < 1) {
-      year -= 1
-      month = 12
-    }
+  month += x
+
+  if (month < 1) {
+    year -= 1
+    month = 12
   }
 
-  else if (ele.target.id === 'next') {
-    month += 1
-    if (month > 12) {
-      year += 1
-      month = 1
-    }
+  if (month > 12) {
+    year += 1
+    month = 1
   }
   create(year, month)
-
 };
 
 create(year, month);
-$('#prev').on('click', move_calendar);
-$('#next').on('click', move_calendar);
+$('#prev').on('click', () => move_calendar(-1));
+$('#next').on('click', () => move_calendar(1));
