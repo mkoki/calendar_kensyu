@@ -30,11 +30,8 @@ function create(year, month) {
       calendarHtml += '</tr>'
   }
 
-  $("title").innerText = month + '月';
-  $('#calendar').prepend(calendarHtml)
-  $('#prev').on('click', move_calendar)
-  $('#next').on('click', move_calendar);
-
+  $("#title").text(year + '-' + month + '月');
+  $('#calendar').prepend(calendarHtml);
   $("td").on('click', openModal);
 
   $('.submit-btn').on('click', function(e) {
@@ -88,3 +85,5 @@ function move_calendar(ele) {
 };
 
 create(year, month);
+$('#prev').on('click', move_calendar);
+$('#next').on('click', move_calendar);
