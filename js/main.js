@@ -1,7 +1,3 @@
-const date = new Date()
-let year = date.getFullYear()
-let month = date.getMonth() + 1
-
 function create(year, month) {
   let startDate = new Date(year, month - 1, 1); //#月の初めの年月日
   let endDate = new Date(year, month,  0); //#月の終わりの年月日
@@ -79,6 +75,10 @@ function moveCalendar(x) {
   }
   create(year, month)
 };
+
+const date = new Date()
+let year = date.getFullYear()
+let month = date.getMonth() + 1
 
 create(year, month);
 $('#prev').on('click', () => moveCalendar(-1));
